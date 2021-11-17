@@ -19,7 +19,19 @@ class _BotaoState extends State<Botao> {
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(top: 15, right: 15),
-            child: Text('Sair', style: TextStyle(fontWeight: FontWeight.bold),),
+            child: ElevatedButton(style: ElevatedButton.styleFrom(primary: Colors.black),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Login(),
+                  ),
+                );
+              },
+              child: Padding(padding: EdgeInsets.all(20.0),
+                child: Text('Sair', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w700,),),
+              ),
+            ),
           )
         ],
       ),
