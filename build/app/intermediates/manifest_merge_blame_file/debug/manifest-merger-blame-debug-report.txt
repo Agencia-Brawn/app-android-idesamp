@@ -22,8 +22,8 @@
 18        android:debuggable="true"
 19        android:icon="@mipmap/ic_launcher"
 19-->C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\android\app\src\main\AndroidManifest.xml:5:9-43
-20        android:label="app_android" >
-20-->C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\android\app\src\main\AndroidManifest.xml:4:9-36
+20        android:label="Botão de Resgate" >
+20-->C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\android\app\src\main\AndroidManifest.xml:4:9-41
 21        <activity
 21-->C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\android\app\src\main\AndroidManifest.xml:6:9-34:20
 22            android:name="com.example.app_android.MainActivity"
@@ -86,6 +86,15 @@
 60-->C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\android\app\src\main\AndroidManifest.xml:38:13-44
 61            android:value="2" />
 61-->C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\android\app\src\main\AndroidManifest.xml:39:13-30
-62    </application>
-63
-64</manifest>
+62
+63        <activity
+63-->[:url_launcher] C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+64            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+64-->[:url_launcher] C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+65            android:exported="false"
+65-->[:url_launcher] C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+66            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+66-->[:url_launcher] C:\Users\LENOVO\Documents\agencia-brawn\clientes-app\idesamp\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+67    </application>
+68
+69</manifest>

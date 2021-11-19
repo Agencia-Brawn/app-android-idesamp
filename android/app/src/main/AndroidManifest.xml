@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app_android">
    <application
-        android:label="app_android"
+        android:label="Botão de Resgate"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -18,12 +18,6 @@ class _SobreState extends State<Sobre> {
         centerTitle: true,
         backgroundColor: Color(0xFFE41F7B),
         title: const  Text('BOTÃO RESGATE'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Text('Sair'),
-          ),
-        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -40,21 +34,20 @@ class _SobreState extends State<Sobre> {
                   Row(
                     children: [
                       Expanded(
-                          child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),)),
+                          child: Text('É um serviço de monitoramento de mulheres em situação de risco de violência doméstica.Em breve o aplicativo estará disponível em todos dispositivos mais usados (Android e IOS)', textAlign: TextAlign.justify, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),)),
                     ],
                   ),
                   Container(height: 25,),
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('PARA QUE SERVE?', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+                      Text('COMO FUNCIONA', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
                     ],
                   ),
                   Row(
                     children: [
-                      Expanded(
-                          child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),)),
+                      Expanded(child: Text('Quando acionado o botão será enviado um alerta para central que executa o protocolo para atendimento de pessoas em risco de violência doméstica.Quando selecionado algum nivel entre amarelo, laranja e vermelho, é enviado uma notificação para central onde o protocolo para atendimento de pessoas em risco eminente de violência doméstica. ', textAlign: TextAlign.justify, style: TextStyle(fontSize: 18,),),),
                     ],
-                  ),
+                  )
                 ],
               ),
             ),
@@ -72,6 +65,8 @@ class _SobreState extends State<Sobre> {
       ),
     );
   }
+
+
 
   void bottonMenuNavigation(int index){
     switch(index){

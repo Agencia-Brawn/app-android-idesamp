@@ -3,6 +3,7 @@ import 'package:app_android/perfil.dart';
 import 'package:app_android/sobre.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Botao extends StatefulWidget {
   @override
@@ -23,12 +24,6 @@ class _BotaoState extends State<Botao> {
         centerTitle: true,
         backgroundColor: Color(0xFFE41F7B),
         title: const  Text('BOTÃO RESGATE'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Text('Sair'),
-          ),
-        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -40,7 +35,13 @@ class _BotaoState extends State<Botao> {
                   children: [
                     Container(width: 200, height: 200,
                       child: Center(child: Text('SOLICITAR RESGATE', textAlign: TextAlign.center, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),),),
-                      decoration: new BoxDecoration(color: Colors.red, borderRadius: BorderRadius.only(topLeft: const Radius.circular(100.0), topRight: const Radius.circular(100.0), bottomLeft: const Radius.circular(100.0), bottomRight: const Radius.circular(100.0),)),
+                      decoration: new BoxDecoration(gradient: LinearGradient(
+                        colors: <Color>[
+                          Color(0xFFF44336),
+                          Color(0xFFFF7267),
+                          Color(0xFFFFA18A),
+                        ],
+                      ), borderRadius: BorderRadius.only(topLeft: const Radius.circular(100.0), topRight: const Radius.circular(100.0), bottomLeft: const Radius.circular(100.0), bottomRight: const Radius.circular(100.0), )),
                     ),
                   ],
                 ),
@@ -104,11 +105,7 @@ class _BotaoState extends State<Botao> {
                                             Container(width: 10,),
                                             TextButton(
                                               child:Text("CONTINUAR", style: TextStyle(fontWeight: FontWeight.bold,),),
-                                                onPressed: () {
-                                                  Navigator.pushReplacement(
-                                                    context, MaterialPageRoute(builder: (BuildContext context) => Login(),),
-                                                  );
-                                                },
+                                                onPressed: abrirBoletim
                                             ),
                                           ],
                                         ),
@@ -146,7 +143,7 @@ class _BotaoState extends State<Botao> {
                                       Container(width: 10,),
                                       TextButton(
                                         child:Text("CONTINUAR", style: TextStyle(fontWeight: FontWeight.bold,),),
-                                        onPressed: () {},
+                                        onPressed: abrirMedida,
                                       ),
                                     ],
                                   ),
@@ -184,7 +181,7 @@ class _BotaoState extends State<Botao> {
                                       Container(width: 10,),
                                       TextButton(
                                         child:Text("CONTINUAR", style: TextStyle(fontWeight: FontWeight.bold,),),
-                                        onPressed: () {},
+                                        onPressed: abrirZap,
                                       ),
                                     ],
                                   ),
@@ -213,6 +210,34 @@ class _BotaoState extends State<Botao> {
         ],
       ),
     );
+  }
+
+
+  abrirZap() async {
+    const url = 'https://api.whatsapp.com/send?phone=559185428044';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Não foi possível acessar a $url';
+    }
+  }
+
+  abrirMedida() async {
+    const url = 'https://docs.google.com/forms/d/e/1FAIpQLSdCqTcDkP0vAOmbaq-zP1-Aq0VTjLZqfpo5fxsrcH1ZuNidvg/viewform?usp=sf_link';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Não foi possível acessar a $url';
+    }
+  }
+
+  abrirBoletim() async {
+    const url = 'https://www.delegaciavirtual.pa.gov.br/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Não foi possível acessar a $url';
+    }
   }
 
   void bottonMenuNavigation(int index){
