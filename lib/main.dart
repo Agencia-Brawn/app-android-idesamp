@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.pink,
+        primaryColorLight: Color(0xFF86003C),
       ),
       home: Login(),
     );

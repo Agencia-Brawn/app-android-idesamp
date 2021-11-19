@@ -1,3 +1,4 @@
+import 'package:app_android/botao.dart';
 import 'package:app_android/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,6 +27,27 @@ class _Cadastrotate extends State<Cadastro> {
   @override
 Widget build(BuildContext context) {
   return Scaffold(
+    appBar: AppBar(
+      centerTitle: true,
+      backgroundColor: Color(0xFFE41F7B),
+      title: const  Text('CADASTRO'),
+      leading: IconButton (
+        icon: Icon(Icons.keyboard_arrow_left_rounded),
+        onPressed: ()
+        {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Login(),),);
+        },
+      ),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.info),
+          onPressed: () {
+            // handle the press
+          },
+        ),
+      ],
+    ),
+
     body: SafeArea(
       child: SingleChildScrollView(
         child: Padding(
@@ -34,42 +56,6 @@ Widget build(BuildContext context) {
             key: _formcadastro,
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 25),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => Login(),
-                        ),
-                      );
-                    },
-                    child: Row(
-                      children: <Widget>[
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.green,
-                          ),
-                        ),
-                        Text(
-                          'CADASTRO',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.green,
-                          ),
-                        ),
-
-                      ],
-
-                    ),
-
-                  ),
-                ),
-
                 // NOME COMPLETO
                 Padding(padding: const EdgeInsets.only(top: 15, bottom: 15),
                   child: TextFormField(
@@ -81,11 +67,8 @@ Widget build(BuildContext context) {
                         return null;
                       }
                     },
-                    style: TextStyle(fontSize: 16.0, color: Colors.black),
-                    decoration: InputDecoration(fillColor: Colors.green[200],
-                      filled: true,
-                      border: OutlineInputBorder(borderRadius: BorderRadius
-                          .circular(10.0)),
+                    style: TextStyle(fontSize: 16.0, color: Colors.black), decoration: InputDecoration(fillColor: Color(0xFFFF8BA0),
+                      filled: true, border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
                       labelText: 'Nome Completo',
                       labelStyle: TextStyle(fontWeight: FontWeight.bold,
                           color: Colors.black),
@@ -101,10 +84,8 @@ Widget build(BuildContext context) {
                   child: TextFormField(
                     controller: _nomesocial,
                     style: TextStyle(fontSize: 16.0, color: Colors.black),
-                    decoration: InputDecoration(fillColor: Colors.green[200],
-                      filled: true,
-                      border: OutlineInputBorder(borderRadius: BorderRadius
-                          .circular(10.0)),
+                    decoration: InputDecoration(fillColor: Color(0xFFFF8BA0),
+                      filled: true, border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
                       labelText: 'Nome Social (Opcional)',
                       labelStyle: TextStyle(fontWeight: FontWeight.bold,
                           color: Colors.black),
@@ -127,7 +108,7 @@ Widget build(BuildContext context) {
                       }
                     },
                     style: TextStyle(fontSize: 16.0, color: Colors.black),
-                    decoration: InputDecoration(fillColor: Colors.green[200],
+                    decoration: InputDecoration(fillColor: Color(0xFFFF8BA0),
                       filled: true,
                       border: OutlineInputBorder(borderRadius: BorderRadius
                           .circular(10.0)),
@@ -154,7 +135,7 @@ Widget build(BuildContext context) {
                       return null;
                     },
                     style: TextStyle(fontSize: 16.0, color: Colors.black),
-                    decoration: InputDecoration(fillColor: Colors.green[200],
+                    decoration: InputDecoration(fillColor: Color(0xFFFF8BA0),
                       filled: true,
                       border: OutlineInputBorder(borderRadius: BorderRadius
                           .circular(10.0)),
@@ -178,7 +159,7 @@ Widget build(BuildContext context) {
                       }
                     },
                     style: TextStyle(fontSize: 16.0, color: Colors.black),
-                    decoration: InputDecoration(fillColor: Colors.green[200],
+                    decoration: InputDecoration(fillColor: Color(0xFFFF8BA0),
                       filled: true,
                       border: OutlineInputBorder(borderRadius: BorderRadius
                           .circular(10.0)),
@@ -204,7 +185,7 @@ Widget build(BuildContext context) {
                       },
                     ),
                     Text('Aceito os'),
-                    RaisedButton(color: Colors.white,
+                    RaisedButton(color: Color(0xFFFF8BA0),
                         onPressed: () => _onButtonPressed(),
                         child: Text('TERMOS DE USO')),
                     Text('do aplicativo'),
@@ -212,19 +193,15 @@ Widget build(BuildContext context) {
                 ),
                 Container(
                     width: double.infinity,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.green[600]),
-                        onPressed: ()  { Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => Cadastro(),
-                          ),
-                        );},
-                        child:
-                        Padding(padding: const EdgeInsets.all(17.0),
-                          child: Text('CADASTRAR', style: TextStyle(
-                              fontSize: 20),),
+                    child: ElevatedButton(style: ElevatedButton.styleFrom(primary: Color(0xFFe41f7b)),
+                        onPressed: ()
+                        {
+                          Navigator.pushReplacement(
+                            context, MaterialPageRoute(builder: (BuildContext context) => Botao(),),
+                          );
+                        },
+                        child: Padding(padding: const EdgeInsets.all(17.0),
+                          child: Text('CADASTRAR', style: TextStyle(fontSize: 20),),
                         ))
                 ),
               ],
@@ -242,9 +219,9 @@ Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Center(child: Text('TERMOS DE USO', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),)),
+          title: Center(child: Text('TERMOS DE USO', style: TextStyle(color: Color(0xFFE41F7B), fontWeight: FontWeight.bold),)),
           actions: [
-            IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, color: Colors.green, size: 35,)),
+            IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, color: Color(0xFFE41F7B), size: 35,)),
           ],
         ),
         body:  Padding(
