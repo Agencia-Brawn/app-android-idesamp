@@ -2,6 +2,7 @@ import 'package:app_android/sobre.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'botao.dart';
+import 'login.dart';
 
 class Perfil extends StatefulWidget {
   @override
@@ -30,7 +31,10 @@ class _PerfilState extends State<Perfil> {
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
             ),
-            onPressed: null,
+            onPressed: ()
+            {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Login(),),);
+            },
             child: const Text('Sair', style: TextStyle(color: Colors.white),),
           ),
         ],
